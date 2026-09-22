@@ -4,3 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+image = "0.25.10"
+nokhwa = { version = "0.10.11", features = ["input-native"] }
+tract = "0.23.7"
+tract-onnx = "0.23.7"
+
