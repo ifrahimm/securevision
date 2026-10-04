@@ -1,0 +1,14 @@
+# Rust build output
+target/
+**/target/
+
+# macOS
+.DS_Store
+
+# SecureVision AI test/generated images
+securevision_test.jpg
+detected_face.jpg
+letterbox_test.jpg
+
+# AI model files - obtain separately
+*.onnx
