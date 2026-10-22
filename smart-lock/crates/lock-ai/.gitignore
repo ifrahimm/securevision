@@ -1,0 +1,17 @@
+# Private enrollment data
+enrollments.json
+enrollments_backup.json
+
+# Anti-spoofing test captures
+antispoof_*.png
+antispoof_*.jpg
+
+# Facial recognition test images
+aligned_*.jpg
+webcam_*.jpg
+jeeva_new.png
+ray_new.png
+unknown*.png
+
+# macOS files
+.DS_Store

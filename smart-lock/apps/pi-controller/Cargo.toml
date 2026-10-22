@@ -1,0 +1,9 @@
+[package]
+name = "pi-controller"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+lock-ai = { path = "../../crates/lock-ai" }
+lock-core = { path = "../../crates/lock-core" }
+lock-protocol = { path = "../../crates/lock-protocol" }

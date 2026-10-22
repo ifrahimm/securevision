@@ -1,6 +1,21 @@
-[package]
-name = "smart-lock"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+resolver = "3"
 
-[dependencies]
+members = [
+    "apps/cli", "apps/pi-controller",
+    "crates/lock-ai",
+    "crates/lock-core",
+    "crates/lock-hal",
+    "crates/lock-protocol",
+]
+
+exclude = [
+    "firmware/proto-v0",
+]
+
+default-members = [
+    "apps/cli",
+    "crates/lock-core",
+    "crates/lock-hal",
+    "crates/lock-protocol",
+]

@@ -7,6 +7,7 @@ pub struct Detection {
     pub x2: f32,
     pub y2: f32,
     pub confidence: f32,
+    pub landmarks: [(f32, f32); 5],
 }
 
 fn sigmoid(x: f32) -> f32 {
@@ -82,12 +83,27 @@ pub fn decode_output(
             let x2 = (grid_x + distances[2]) * stride;
             let y2 = (grid_y + distances[3]) * stride;
 
+            let mut landmarks = [(0.0f32, 0.0f32); 5];
+
+            for i in 0..5 {
+                let base = 65 + i * 3;
+
+                let raw_x = array[[0, base, y, x]];
+                let raw_y = array[[0, base + 1, y, x]];
+
+                let landmark_x = (x as f32 + 2.0 * raw_x) * stride;
+                let landmark_y = (y as f32 + 2.0 * raw_y) * stride;
+
+                landmarks[i] = (landmark_x, landmark_y);
+            }
+
             detections.push(Detection {
                 x1,
                 y1,
                 x2,
                 y2,
                 confidence,
+                landmarks,
             });
         }
     }

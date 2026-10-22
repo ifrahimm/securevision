@@ -4,11 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
 image = "0.25.10"
 imageproc = { version = "0.27.0", default-features = false }
 nokhwa = { version = "0.10.11", features = ["input-native"] }
 powerboxesrs = { version = "0.3.1", default-features = false }
 tract = "0.23.7"
 tract-onnx = "0.23.7"
-
-[workspace]
+minifb = "0.29.0"
+font8x8 = "0.3.1"
